@@ -1,29 +1,79 @@
-# Coding exercise
+# Coding exercise API: Vayid Moussa
+This is a sample API that has 3 endpoints.
 
-Clone this repository and commit your work to it.  Push the repository to a suitable service so that we can see the results (eg GitLab or GitHub).
+1. /say-hello
+2. /add
+3. /join-words
 
-Create an API using Python. The API should have three endpoints:
+The endpoints perform the following actions respectively.
 
 1. Return "Hello World"
 2. Given two numbers, add them together and return the sum
 3. Given two words, join them with a dash and return the result
 
-If you have any questions, pick an answer and then document it.
+It has the SwaggerUI interface which can be viewed by visiting `/docs` or `/redoc` once the server is up and running.
 
-You can use any Python framework or libraries that you want to.  There should be instructions on how to install and run it.  The API should ideally be platform independent but it will be evaluated on a recent MacOS machine.
+# Requirements
 
-Preferably there should be some tests.
+This project was built using `Python 3.10.2` and uses the `fastapi` module.
 
-The code should be neat and error free.  We use `black`, `isort` and `flake8` to keep our code neat.  You don't have to use this, but you may find it helpful.  You can install them by running: `pip install -U black isort flake8`.  We have included configuration in this repo.  You can run them using:
+The tests use the `unittest` module which comes bundled with python.
 
-    black .
-    isort .
-    flake8 .
+Running the API uses the `uvicorn` module, but it can be run on another ASGI server program if required.
 
-Don't worry if you can't complete all the tasks in the allotted time. Document your solution as it stands. We are interested in knowing how you write code and how you solve problems.
+# Installation
 
-Things we will be judging the submission on:
+In the root project folder, open a terminal window and run the following command:
 
-* Documentation, including instructions on how to run your solution
-* Correctness and completeness of solution
-* Code quality
+```bash
+python3 -m venv .venv
+```
+
+This creates a virtual environment for you to install the dependencies required.
+
+To activate this environment in your terminal run the command:
+
+```batch
+./.venv/Scripts/activate
+```
+On macOS you would have to run:
+
+```bash
+source .venv/bin/activate
+```
+You should see the virtual environment `.venv` activated by it displaying in your console window at the start in parentheses.
+
+Now run the following command to install the dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+# Running the API
+
+In a terminal window in the root project folder, make sure you have activated the virtual environment, then run the command:
+
+```bash
+python -m uvicorn main:app
+```
+You will see a message stating what ip address and port the server is running on to access the API.
+
+# Running Tests
+
+In the project folder, open a terminal and activate the virtual environment by running:
+
+```batch
+./.venv/Scripts/activate
+```
+
+Or if using a macOS device:
+
+```bash
+source .venv/bin/activate
+```
+
+Then run to see the output of the test results:
+
+```bash
+python -m unittest
+```
