@@ -26,7 +26,7 @@ class TestAPI(unittest.TestCase):
         response = client.get("/add", params={"num1": "Not a number", "num2": "10"})
         self.assertEqual(response.status_code, 422)
         self.assertEqual(response.json()["detail"][0]["msg"],
-                          "value is not a valid integer")
+                         "value is not a valid integer")
 
     def test_join_words(self):
         """Testing the joining of two words with a dash in between."""
