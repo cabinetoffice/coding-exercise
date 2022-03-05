@@ -8,7 +8,7 @@ client = TestClient(app)
 
 class TestAPI(unittest.TestCase):
     def test_hello(self):
-        response = client.get("/hello")
+        response = client.get("/say-hello")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json(), {"message": "Hello World!"})
 

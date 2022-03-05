@@ -13,7 +13,7 @@ def root():
     }
 
 
-@app.get("/hello")
+@app.get("/say-hello")
 def hello():
     """Returns a hello world message in JSON"""
     return {"message": "Hello World!"}
