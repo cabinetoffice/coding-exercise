@@ -6,7 +6,7 @@ app = FastAPI()
 
 
 @app.get("/")
-async def root():
+def root():
     return {
         "message": "This is a simple API for my coding exercise. "
         "Please visit /docs or /redoc for more information on how to use it."
@@ -14,15 +14,18 @@ async def root():
 
 
 @app.get("/hello")
-async def hello():
+def hello():
+    """Returns a hello world message in JSON"""
     return {"message": "Hello World!"}
 
 
 @app.get("/add")
-async def add(num1: int, num2: int):
+def add(num1: int, num2: int):
+    """Takes two numbers and returns the result of the addition."""
     return {"result": num1 + num2}
 
 
-@app.get("/addwords")
-async def addwords(word1: str, word2: str):
+@app.get("/join-words")
+def addwords(word1: str, word2: str):
+    """Takes two words and returns a joined word separated by a dash."""
     return {"result": f"{word1}-{word2}"}
